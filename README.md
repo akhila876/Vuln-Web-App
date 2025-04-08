@@ -85,7 +85,9 @@ cd vuln_webapp
 python -m venv venv
 
 venv\Scripts\activate    # Windows
- or
+
+or
+
 source venv/bin/activate # Linux/Mac
 
 ### 3. Install Dependencies
