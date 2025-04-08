@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Welcome to the Vulnerable Web App</h1>
+
+    {% if user.is_authenticated %}
+      <p>Hello, {{ user.username }}!</p>
+      <p>
+        <a href="{% url 'profile' %}">View Profile</a> |
+        <a href="{% url 'gallery' %}">Your Gallery</a> |
+        <a href="{% url 'create_post' %}">Create Post</a> |
+        <a href="{% url 'change_password' %}">Change Password</a> |
+        <a href="{% url 'logout' %}">Logout</a>
+      </p>
+    {% else %}
+      <p>
+        <a href="{% url 'login' %}">Login</a> or
+        <a href="{% url 'register' %}">Register</a>
+      </p>
+    {% endif %}
+  </div>
+{% endblock %}
